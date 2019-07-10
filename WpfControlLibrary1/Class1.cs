@@ -64,6 +64,28 @@ namespace Test_CreateDLL
             };
             return account;
         }
+
+        public class TestClass
+        {
+            public string id { get; set; }
+            public string pw { get; set; }
+            public string ip { get; set; }
+            public int port { get; set; }
+        }
+
+        public async Task<object> setInfo(object input) // input: { "id": "admin", "pw": "qwer1234", "ip": "12345", "port": 1234 }
+        {
+            string json = JsonConvert.SerializeObject(input, Formatting.Indented);
+            inputData ipd = JsonConvert.DeserializeObject<inputData>(json);
+            TestClass testClass = new TestClass
+            {
+                id = ipd.id,
+                pw = ipd.pw,
+                ip = ipd.ip,
+                port = port.id
+            };
+            return testClass;
+        }
         
     }
 }
