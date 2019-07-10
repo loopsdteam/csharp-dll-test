@@ -7,3 +7,4 @@ packages
 # output
 bin
 obj
+.DS_Store
