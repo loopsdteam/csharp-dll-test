@@ -76,13 +76,13 @@ namespace Test_CreateDLL
         public async Task<object> setInfo(object input) // input: { "id": "admin", "pw": "qwer1234", "ip": "12345", "port": 1234 }
         {
             string json = JsonConvert.SerializeObject(input, Formatting.Indented);
-            inputData ipd = JsonConvert.DeserializeObject<inputData>(json);
+            TestClass ipd = JsonConvert.DeserializeObject<TestClass>(json);
             TestClass testClass = new TestClass
             {
                 id = ipd.id,
                 pw = ipd.pw,
                 ip = ipd.ip,
-                port = port.id
+                port = ipd.port
             };
             return testClass;
         }
